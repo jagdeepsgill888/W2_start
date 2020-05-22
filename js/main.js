@@ -7,15 +7,20 @@
   console.log('fired!');
 
 // this is where you select elements here
- let theBagde = document.querySelector(".badge"),
+ let theBagdes = document.querySelectorAll(".badge"),
     svgBadge=document.querySelector("svg");
+    mainHeading= document.querySelector("#mainHeading")
  // debugger;   pause ur code execution here //
 
   function logID() {
-    console.log(this.id);
+    console.log("clicked on a graphic - this one: ", this.id);
+    this.classList.add("selected");
   }
 
-  theBagde.addEventListener("click", logID);
-    svgBadge.addEventListener("click", logID);
+  theBagdes.forEach(badge => badge.addEventListener("click", logID));
+  svgBadge.addEventListener("click", logID);
+
+
+
 
 }) ();
